@@ -9,6 +9,14 @@
 * Run `npm i` once in Terminal to install Dependencies
 * Run `node index.js` to ***RUN*** the bot.
 
+### For replit users -
+#### Requirements & Steps
+* Discord Bot Token, Prefix
+* Edit the `config.js and owner.json` file
+* Run `npm i` once in Terminal to install Dependencies
+* Run `node index.js` to ***RUN*** the bot.
+
+
 #### Features & Info
 * Author: `Felix_PlaYZ#1000`
 * Moderation Bot built to manage discord servers.
