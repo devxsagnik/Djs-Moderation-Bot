@@ -12,6 +12,10 @@ module.exports = {
         .setDescription("**Sorry, you don't have permissions to use this! ❌**")
         
         if(!message.channel.permissionsFor(message.member).has("BAN_MEMBERS") ) return message.channel.send(lockPermErr);
+        
+        if(!args[0]) {
+        return message.channel.send("Please specify something.`Either on/off`")
+        };
 
         const channels = message.guild.channels.cache.filter(ch => ch.type !== 'category');
         if (args[0] === 'on') {
