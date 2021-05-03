@@ -4,6 +4,7 @@ const db = require('quick.db');
 module.exports = {
     config: {
         name: "mute",
+        category: 'mod',
         description: "Mutes a member in the discord!",
         usage: "[name | nickname | mention | ID] <reason> (optional)",
     },

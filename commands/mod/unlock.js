@@ -4,6 +4,7 @@ const { Console } = require('console');
 module.exports = {
     config: {
         name: "unlock",
+        category: 'mod',
         description: "unlock channel",
         aliases: []
     },
@@ -12,7 +13,7 @@ module.exports = {
         .setTitle("**User Permission Error!**")
         .setDescription("**Sorry, you don't have permissions to use this! ❌**")
         
-        if(!message.channel.permissionsFor(message.member).has("ADMINISTRATOR") ) return message.channel.send(lockPermErr);
+        if(!message.channel.permissionsFor(message.member).has("MANAGE_CHANNELS") ) return message.channel.send(lockPermErr);
 
         let channel = message.channel;
 

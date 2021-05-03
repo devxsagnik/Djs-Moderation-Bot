@@ -4,6 +4,7 @@ module.exports = {
     config: {
     
         name: "deafen",
+        category: 'mod',
         description: "Deafen a member in a voice channel",
         usage: "deafen <user>",
         aliases: ["deaf"]
@@ -18,7 +19,7 @@ module.exports = {
         if(!member) return message.channel.send("Unable to find the mentioned user in this guild.")
 
         let reason = args.slice(1).join(" ");
-        if (!reason) reason = "No Reason Provided"
+        if (!reason) reason = "No Reason Provided";
 
 
         try {

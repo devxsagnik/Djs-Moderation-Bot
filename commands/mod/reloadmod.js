@@ -4,6 +4,7 @@ const { readdirSync } = require("fs");
 module.exports = {
     config: {
         name: "reloadmod",
+        category: 'mod',
         description: "Reload command- Dev Only",
         aliases: ['rmod']
     },

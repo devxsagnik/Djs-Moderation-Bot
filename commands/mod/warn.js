@@ -4,6 +4,7 @@ module.exports = {
     config: {
         name: "warn",
         description: "warn members",
+        category: 'mod',
         usage: "m/warn <mention member/member id> [reason]",
         aliases: []
     },

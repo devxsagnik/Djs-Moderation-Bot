@@ -3,6 +3,7 @@ const { ownerID } = require('../../owner.json')
 module.exports = {
     config: {
       name: "dm",
+      category: 'mod',
       description: "DM a user in the guild",
       aliases: ['pm']
     },

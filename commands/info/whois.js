@@ -12,6 +12,7 @@ module.exports = {
     config: {
         name: "whois",
         description: "userinfo",
+        category: 'info',
         usage: "m/whois <mention a member/member id>",
         aliases: ['ui', 'userinfo']
     },

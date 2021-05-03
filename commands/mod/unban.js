@@ -4,6 +4,7 @@ const db = require('quick.db');
 module.exports = {
     config: {
         name: "unban",
+        category: 'mod',
         description: "Unban a user from the guild!",
         usage: "[name | tag | mention | ID] <reason> (optional)",
         aliases: ["ub", "unbanish"],

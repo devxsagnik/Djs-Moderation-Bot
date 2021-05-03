@@ -4,6 +4,7 @@ module.exports = {
     config: {
     
         name: "vcmove",
+        category: 'mod',
         description: "moves a member in from one voice channel to another",
         usage: "vcmove <user> <channel>",
        

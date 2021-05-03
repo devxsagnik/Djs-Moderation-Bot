@@ -4,7 +4,7 @@ const db = require('quick.db');
 module.exports = {
     config: {
         name: "kick",
-        category: "moderation",
+        category: "mod",
         description: "Kicks the user",
         accessableby: "Administrator",
         usage: "[name | nickname | mention | ID] <reason> (optional)",

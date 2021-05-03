@@ -1,5 +1,3 @@
-exports.TOKEN = "BOT-TOKEN-HERE";
 
-exports.PREFIX = "PREFIX HERE";
 
-exports.OWNER_ID = "OWNER-ID HERE"
+exports.OWNER_ID = "446339358786846763";

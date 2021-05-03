@@ -3,6 +3,7 @@ const { ownerID } = require("../../owner.json")
 module.exports = {
   config: {
     name: "roleadd",
+    category: 'mod',
     description: "Add a role to a member",
     usage: "m/roleadd <member mention/id> <role mention/role id>",
     aliases: ['role add', 'radd']

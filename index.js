@@ -1,4 +1,4 @@
-console.log("Bot coded by Felix_Playz#1000")
+console.log("Bot coded by Felix_Playz#1000");
 
 //====================================================================================CONSTANTS REQUIRED ON READY=============================================================================================
 const { Client, Collection } = require('discord.js');
@@ -45,7 +45,7 @@ bot.on('message', async message => {
             }
         
             } catch {
-            prefix = PREFIX
+            prefix = PREFIX;
     };
     try {
         if (message.mentions.has(bot.user.id) && !message.content.includes("@everyone") && !message.content.includes("@here")) {

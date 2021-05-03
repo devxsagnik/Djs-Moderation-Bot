@@ -3,6 +3,7 @@ const db = require('quick.db');
 module.exports = {
     config: {
         name: "disablemuterole",
+        category: 'admin',
         aliases: ['clearmuterole', 'dmr', 'disablemr', 'dmrole'],
         description: 'Disables Server Mute Role',
         usage: '[role name | role mention | role ID]',

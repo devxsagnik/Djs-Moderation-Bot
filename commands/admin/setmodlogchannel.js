@@ -3,7 +3,7 @@ const db = require("quick.db")
 module.exports = {
     config: {
         name: "setmodlogchannel",
-        category: "moderation",
+        category: "admin",
         aliases: ['setm', 'sm', 'smc', 'setmodlog'],
         description: "Sets A Channel Where The Bot Can Send Moderation Logs!",
         usage: "[channel mention | channel ID | channel name]",

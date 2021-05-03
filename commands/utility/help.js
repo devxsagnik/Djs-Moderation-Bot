@@ -8,8 +8,9 @@ module.exports = {
 config: {
     name: "help",
     description: "Help Menu",
-    usage: "1) m/help \n2) m/help [module name]\n3) m/help [command (name or alias)]",
-    example: "1) m/help\n2) m/help utility\n3) m/help ban",
+    category: 'utility',
+    usage: "1) !help \n2) !help [module name]\n3) !help [command (name or alias)]",
+    example: "1) !help\n2) !help util\n3) !help ban",
     aliases: ['h']
 },
 run: async (bot, message, args) => {
@@ -26,76 +27,32 @@ run: async (bot, message, args) => {
             console.log(e)
     };
 
-if(message.content.toLowerCase() === `${prefix}help`){
-    var log = new Discord.MessageEmbed()
-    .setTitle("**Help Menu: Main**")
-    .setColor(`#d9d9d9`)
-    .setDescription("A feature rich discord.js moderation Bot to help you out controling moderation activities")
-    .addField(`**👑Moderation**`, `[ \`${prefix}help mod\` ]`, true)
-    .addField(`**⚙️Utility**`, `[ \`${prefix}help utility\` ]`, true)
-    .setFooter("© Felix_PlaYz#1000")
-    .setTimestamp()
+    let Categories = ["admin", "info", "mod", "utility"],
+    AllCommands = [];
 
-message.channel.send(log);
-} 
-else if(args[0].toLowerCase() === "mod") {
-    var commandArray = "1) Ban \n2) Kick\n3) Whois\n4) Unban\n5) Warn\n6) Mute\n7) Purge\n8) Slowmode \n9) Nick \n10) Roleinfo"
-    var commandA2 = "11) Rolememberinfo\n12) Setmodlog\n13) Disablemodlog\n14) Lock (Lock the channel)\n15) Unlock (Unlock the channel)\n16) Lockdown (Fully Lock the whole server. [FOR EMRGENCIES ONLY]) \n17) Hackban\\forceban <id>\n18) whois <tag>/<mention-id>"
-    
-    pageN1 = "**\n💠Commands: **\n`\`\`js\n" + commandArray + "\`\`\`";
-    pageN2 = "**\n💠Commands: **\n`\`\`js\n" + commandA2 + "\`\`\`";
-    
-    let pages = [pageN1, pageN2]
-    let page = 1 
+const Emotes = {
+    admin: "⚙️ admin",
+    info: "📚 info",
+    mod: "🔧 mod",
+    utility: "😄 utility"
+};
 
-    var embed = new Discord.MessageEmbed()
-        .setTitle('**Help Menu: [Moderation]👑**')
-        .setColor("#d9d9d9") // Set the color
-        .setFooter(`Page ${page} of ${pages.length}`, bot.user.displayAvatarURL())
-        .setDescription(pages[page-1])
+for (let i = 0; i < Categories.length; i++) {
+    const Cmds = await bot.commands.filter(C => C.config.category === Categories[i]).array().map(C => C.config.name).sort((a, b) => a < b ? -1 : 1).join(", ");
+    AllCommands.push(`\n\n**${Emotes[Categories[i]]}**\n\`\`\`${Cmds}\`\`\``);
+};
 
-        message.channel.send({embed}).then(msg => {
-            msg.react('⬅').then( r => {
-            msg.react('➡')
-            
-            // Filters
-            const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && user.id === message.author.id
-            const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && user.id === message.author.id
-            
-            const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000})
-            const forwards = msg.createReactionCollector(forwardsFilter, {timer: 6000})
-            
-            backwards.on('collect', (r, u) => {
-                if (page === 1) return r.users.remove(r.users.cache.filter(u => u === message.author).first())
-                page--
-                embed.setDescription(pages[page-1])
-                embed.setFooter(`Page ${page} of ${pages.length}`, bot.user.displayAvatarURL())
-                msg.edit(embed)
-                r.users.remove(r.users.cache.filter(u => u === message.author).first())
-            })
-            
-            forwards.on('collect', (r, u) => {
-                if (page === pages.length) return r.users.remove(r.users.cache.filter(u => u === message.author).first())
-                page++
-                embed.setDescription(pages[page-1])
-                embed.setFooter(`Page ${page} of ${pages.length}`, bot.user.displayAvatarURL())
-                msg.edit(embed)
-                r.users.remove(r.users.cache.filter(u => u === message.author).first())
-            })
-            
-            
-            })
-            })
-}
+const Description = `My Prefix For **${message.guild.name}** Is **${prefix}**\n\nFor More Command Information, Type The Following Command:\n**${prefix}Help <Command Name>**`;
 
-else if(args[0].toLowerCase() === "utility") {
-    var embed = new Discord.MessageEmbed()
-    .setTitle('**Help Menu: [Utility]**')
-    .setColor("#d9d9d9") // Set the color
-    .setDescription("```js\n" + `1) Prefix [${prefix}help prefix for more info]\n2) Help [${prefix}help for more info]` + "```")
+const Embed = new Discord.MessageEmbed()
+    .setColor("RANDOM")
+    .setAuthor("Commands", message.author.avatarURL({
+        dynamic: true
+    }))
+    .setDescription(Description + AllCommands.join("") + "")
+    .setTimestamp();
 
-    message.channel.send(embed);
-}
+if (!args[0]) return message.channel.send(Embed);
 
 else {
     const embed = new Discord.MessageEmbed()

@@ -3,6 +3,7 @@ const Discord = require('discord.js')
 module.exports = {
     config: {
         name: "lockdown",
+        category: 'mod',
         description: "lock server",
         aliases: []
     },
@@ -11,7 +12,7 @@ module.exports = {
         .setTitle("**User Permission Error!**")
         .setDescription("**Sorry, you don't have permissions to use this! ❌**")
         
-        if(!message.channel.permissionsFor(message.member).has("BAN_MEMBERS") ) return message.channel.send(lockPermErr);
+        if(!message.channel.permissionsFor(message.member).has("MANAGE_CHANNELS") ) return message.channel.send(lockPermErr);
         
         if(!args[0]) {
         return message.channel.send("Please specify something.`Either on/off`")

@@ -6,10 +6,14 @@ module.exports = {
     config: {
         name: "hackban",
         aliases: ['forceban'],
+        category: 'mod',
         usage: "[hackban || forceban] <user ID>",
     },
 
     run: async(bot, message, args) => {
+        
+        if(!message.channel.permissionsFor(message.member).has("BAN_MEMBERS") && !ownerID.includes(message.author.id)) return;
+        
         const target = args[0];
         if (isNaN(target)) return message.reply(`Please specify an ID`);
 

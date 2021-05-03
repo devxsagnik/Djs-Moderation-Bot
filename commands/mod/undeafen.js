@@ -4,6 +4,7 @@ module.exports = {
     config: {
     
         name: "undeafen",
+        category: 'mod',
         description: "Undeafen a member in a voice channel",
         usage: "Undeafen <user>",
         aliases: ["undeaf"]

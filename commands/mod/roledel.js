@@ -2,6 +2,7 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
   config: {
     name: "roledel",
+    category: 'mod',
     description: "Remove a role from a member",
     usage: "m/roledel <member mention/member id> <role mention/role id>",
     aliases: ['role del', 'role delete', 'rdel']

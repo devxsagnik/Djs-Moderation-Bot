@@ -4,7 +4,7 @@ module.exports = {
     config: {
         name: "disablemodlogchannel",
         aliases: ['dmc', 'disablem', 'disablemodlog'],
-        category: 'moderation',
+        category: 'admin',
         description: 'Disables Server Modlog Channel',
         usage: '[channel name | channel mention | channel ID]',
         accessableby: 'Administrators'

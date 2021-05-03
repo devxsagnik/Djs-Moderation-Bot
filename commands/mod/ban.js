@@ -1,10 +1,11 @@
 const { MessageEmbed } = require('discord.js');
-const db = require('quick.db')
-const { ownerID } = require("../../owner.json")
+const db = require('quick.db');
+const { ownerID } = require("../../owner.json");
 
 module.exports = {
     config: {
         name: "ban",
+        category: 'mod',
         aliases: ["b", "banish"],
         description: "Bans the user",
         usage: "[name | nickname | mention | ID] <reason> (optional)",
@@ -23,7 +24,7 @@ module.exports = {
 
             if (!banMember.bannable) return message.channel.send("**Cant Kick That User**")
             try {
-            message.guild.members.ban(banMember)
+            message.guild.members.ban(banMember);
             banMember.send(`**Hello, You Have Been Banned From ${message.guild.name} for - ${reason || "No Reason"}**`).catch(() => null)
             } catch {
                 message.guild.members.ban(banMember)

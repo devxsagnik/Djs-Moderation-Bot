@@ -4,7 +4,7 @@ module.exports = {
     config: {
         name: "purge",
         aliases: [],
-        category: "moderation",
+        category: "mod",
         description: "Deletes messages from a channel",
         usage: "m/purge [amount of messages]"
     },

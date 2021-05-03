@@ -5,7 +5,7 @@ module.exports = {
     config: {
         name: "setnick",
         aliases: ["sn", 'nick'],
-        category: "moderation",
+        category: "mod",
         description: "Sets Or Changes Nickname Of An User",
         usage: "[mention | name | nickname | ID] <nickname>",
     },
