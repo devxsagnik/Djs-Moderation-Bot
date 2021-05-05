@@ -9,7 +9,7 @@ config: {
     usage: 'fact',
     aliases: [''],
 },
-    run: async(client, message, args) => {
+    run: async(bot, message, args) => {
        let data = await Random.GetFact();
        message.channel.send(data);
     }

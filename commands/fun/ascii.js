@@ -9,7 +9,7 @@ module.exports = {
    aliases: [""],
    usage: "ascii <name>",
     },
-run: async (client, message, args) => {
+run: async (bot, message, args) => {
     
     if(!args[0]) return message.channel.send('Please provide some text');
 

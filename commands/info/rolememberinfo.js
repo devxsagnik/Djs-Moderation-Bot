@@ -8,7 +8,7 @@ module.exports = {
             usage: "m/rolememberinfo <role mention/role id>",
             aliases: ['rmi', 'rmemberinfo']
         },
-        run: async (client, message, args) => {
+        run: async (bot, message, args) => {
         if (args.includes("@everyone")) return;
         
         if (args.includes("@here")) return;

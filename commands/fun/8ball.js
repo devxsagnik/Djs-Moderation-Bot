@@ -8,8 +8,8 @@ module.exports = {
   category: "fun",
   usage: "8ball",
     },
-  run: async (client, message, args) => {
-    let question = message.content.slice(client.prefix + 6);
+  run: async (bot, message, args) => {
+    let question = message.content.slice(bot.prefix + 6);
     if (!question)
       return message.channel.send(`You did not specify your question!`);
     else {

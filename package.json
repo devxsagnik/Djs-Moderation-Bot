@@ -10,8 +10,10 @@
     "amethyste-api": "^1.1.5",
     "anime-scraper": "^3.1.1",
     "beautify": "^0.0.8",
+    "canvacord": "^5.2.0",
     "cheerio": "^1.0.0-rc.3",
     "common-tags": "^1.8.0",
+    "discord-image-generation": "^1.4.9",
     "discord.js": "^12.5.3",
     "ffmpeg": "^0.0.4",
     "ffmpeg-static": "^4.3.0",
@@ -31,7 +33,8 @@
     "request-promise-native": "^1.0.9",
     "sharp": "^0.28.0",
     "srod-v2": "^1.0.2",
-    "superagent": "^6.1.0"
+    "superagent": "^6.1.0",
+    "weather.js": "^0.1.0"
   },
   "devDependencies": {},
   "scripts": {

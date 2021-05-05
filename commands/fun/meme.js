@@ -9,7 +9,7 @@ config: {
     usage: 'memes',
     aliases: [''],
 },
-    run: async(client, message, args) => {
+    run: async(bot, message, args) => {
         let data = await Random.GetMeme();
         message.channel.send(data);
     }

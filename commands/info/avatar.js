@@ -6,9 +6,9 @@ module.exports = {
   aliases: [" "],
   description: "Display a user avatar",
   usage: "avatar [@user | user ID]",
-  category: "fun",
+  category: "info",
     },
- run: async (client, message, args) => {
+ run: async (bot, message, args) => {
   let user;
 
 if (message.mentions.users.first())

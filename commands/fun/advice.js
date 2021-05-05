@@ -9,7 +9,7 @@ config: {
     usage: 'advice',
     aliases: [''],
 },
-    run: async(client, message, args) => {
+    run: async(bot, message, args) => {
         
         const Data = await Random.GetAdvice();
         return message.channel.send(Data);

@@ -8,7 +8,7 @@ module.exports = {
     usage: "m/roleadd <member mention/id> <role mention/role id>",
     aliases: ['role add', 'radd']
   },
-  run: async (client, message, args) => {
+  run: async (bot, message, args) => {
 
     if(!message.member.hasPermission(["MANAGE_ROLES"]) && !ownerID.includes(message.author.id)) return message.channel.send("You dont have permission to perform this command!")
 
