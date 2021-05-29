@@ -1,4 +1,4 @@
-const db = require("quick.db")
+const db = require("old-wio.db")
 const { MessageEmbed } = require("discord.js");
 const { measureMemory } = require("vm");
 

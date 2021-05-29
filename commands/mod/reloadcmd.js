@@ -1,23 +1,31 @@
 const Discord = require("discord.js")
 const { readdirSync } = require("fs");
+const { OWNER_ID } = require("../../config");
+const { MessageEmbed } = require("discord.js");
 
 module.exports = {
     config: {
         name: "reloadmod",
-        category: 'mod',
+        category: "owner",
         description: "Reload command- Dev Only",
         aliases: ['rmod']
     },
 
     run: async (bot, message, args) => {
-
-        let embed = new Discord.MessageEmbed()
-        .setTitle("Reload")
-        .setDescription("Sorry, the `reload` command can only be executed by the Developer.")
-        .setColor("#cdf785");
-        if(message.author.id !== '684092617272721420') return message.channel.send(embed);
-
-        if(!args[0].toLowerCase()) return message.channel.send("Please provide a command name!")
+        if(message.author.id != OWNER_ID) {
+          const rembed = new MessageEmbed()
+          .setTitle("Error")
+          .setDescription(":x: You are not authorized to use this command as it is resticted to the owner only")
+          .setColor("#FF0000")
+          .setFooter(message.author.username, bot.user.displayAvatarURL())
+          .setTimestamp();
+        message.channel.send(rembed).then(m => m.delete({
+          timeout: 7500
+        })
+        );
+        } else {
+       
+        if(!args[0]) return message.channel.send("Please provide a command name!")
 
         let commandName = args[0].toLowerCase()
 
@@ -34,6 +42,6 @@ module.exports = {
           return message.channel.send(`Could not Reload Command: ${commandName} From Moderation Module Because: \n${e}`)
         }
 
-
+}
       }
 } 

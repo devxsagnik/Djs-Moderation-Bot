@@ -1,4 +1,4 @@
-# Moderation Bot
+# Moderation Bot"
 
 ### For Visual Studio Code Users -  
 #### Requirements & Steps
@@ -45,6 +45,8 @@
 * VoiceMove [Move a peerson from one vc to another]
 * Warn
 * Whois
+* Show Warns
+* Say
 
 # Contributors:
  * [Felix_PlaYz](https://github.com/gtagamermods) - Code and Commands

@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports = {
     config: {
   name: "avatar",
-  aliases: [" "],
+  aliases: ["av"],
   description: "Display a user avatar",
   usage: "avatar [@user | user ID]",
   category: "info",
@@ -30,7 +30,7 @@ let avatar = user.displayAvatarURL ({size: 4096, dynamic: true});
 const embed = new Discord.MessageEmbed()
 
 .setTitle(`${user.tag} avatar`)
-.setDescription(`[Avatar URL of **${user.tag}**](${avatar})`) 
+.setDescription(`[Avatar URL of ${user.tag}](${avatar})`) 
 .setColor("RANDOM")
 .setImage(avatar);
 

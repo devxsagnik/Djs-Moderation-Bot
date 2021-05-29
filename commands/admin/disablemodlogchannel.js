@@ -1,4 +1,4 @@
-const db = require('quick.db');
+const db = require('old-wio.db');
 
 module.exports = {
     config: {

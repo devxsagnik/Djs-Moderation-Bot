@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const { MessageEmbed } = require('discord.js');
 const config = require('../../config.json');
-const weather = require('weather.js');
+const weather = require('weather-js');
 
 module.exports = {
     config: {
@@ -22,7 +22,7 @@ module.exports = {
                 return message.channel.send(errorembed);
         }
         
-        weather.find({search: args.join(" "), degreeType: 'C'}, function(err, result) {
+        weather.find({ search: args.join(" "), degreeType: 'C'}, function(err, result) {
           
         if(result.length === 0){
             let errorembed = new MessageEmbed()

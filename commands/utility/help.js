@@ -1,8 +1,9 @@
-var Discord = require('discord.js')
-const fs = require("fs")
-const { PREFIX } = require("../../config")
-const db = require('quick.db')
+const Discord = require('discord.js')
+const fs = require("fs");
+const { PREFIX } = require("../../config.js");
+const db = require('old-wio.db');
 const { stripIndents } = require("common-tags");
+const { support } = require("../../config.json");
 
 module.exports = {
 config: {
@@ -26,15 +27,19 @@ run: async (bot, message, args) => {
         } catch (e) {
             console.log(e)
     };
+    
+    try {
 
-    let Categories = ["admin", "info", "mod", "utility"],
+    let Categories = ["admin", "fun", "images", "info", "mod", "utility"],
     AllCommands = [];
 
 const Emotes = {
-    admin: "⚙️ admin",
-    info: "📚 info",
-    mod: "🔧 mod",
-    utility: "😄 utility"
+    admin: "⚙️ Admin",
+    fun: "🙂 Fun",
+    images: "🔍 Images",
+    info: "📚 Info",
+    mod: "🔧 Mod",
+    utility: "🤖 Utility"
 };
 
 for (let i = 0; i < Categories.length; i++) {
@@ -42,21 +47,22 @@ for (let i = 0; i < Categories.length; i++) {
     AllCommands.push(`\n\n**${Emotes[Categories[i]]}**\n\`\`\`${Cmds}\`\`\``);
 };
 
-const Description = `My Prefix For **${message.guild.name}** Is **${prefix}**\n\nFor More Command Information, Type The Following Command:\n**${prefix}Help <Command Name>**`;
+const Description = `My Prefix For **${message.guild.name}** Is **${prefix}**\n\nFor More Command Information, Type The Following Command:\n**${prefix}help <command Name> or** <@${bot.user.id}> **help <command name>**`;
 
 const Embed = new Discord.MessageEmbed()
     .setColor("RANDOM")
     .setAuthor("Commands", message.author.avatarURL({
         dynamic: true
     }))
-    .setDescription(Description + AllCommands.join("") + "")
+    .setDescription(Description + AllCommands.join("") + "" + "\n\n" + "**Links -**" + ` [Join Support](${support}) • [Invite Me](https://discordapp.com/oauth2/authorize?client_id=${bot.user.id}&permissions=8&scope=bot)`)
+    .setFooter(`Requested by ${message.author.username}`, bot.user.displayAvatarURL())
     .setTimestamp();
 
 if (!args[0]) return message.channel.send(Embed);
 
 else {
     const embed = new Discord.MessageEmbed()
-    .setColor("#d9d9d9")
+    .setColor("RANDOM")
     .setAuthor(`${message.guild.me.displayName} Help`, message.guild.iconURL())
     .setThumbnail(bot.user.displayAvatarURL())
 
@@ -65,15 +71,18 @@ else {
     command = command.config
 
     embed.setDescription(stripIndents`
-    ** Command -** [    \`${command.name.slice(0, 1).toUpperCase() + command.name.slice(1)}\`   ]\n
-    ** Description -** [    \`${command.description || "No Description provided."}\`   ]\n
-    ** Usage -** [   \`${command.usage ? `\`${command.usage}\`` : "No Usage"}\`   ]\n
-    ** Examples -** [   \`${command.example ? `\`${command.example}\`` : "No Examples Found"}\`   ]\n
-    ** Aliases -** [   \`${command.aliases ? command.aliases.join(" , ") : "None."}\`   ]`)
+    ** Command -** \`${command.name.slice(0, 1).toUpperCase() + command.name.slice(1)}\`\n
+    ** Description -** \`${command.description || "No Description provided."}\`\n
+    ** Usage -** [   \`${command.usage ? `${command.usage}` : "No Usage"}\`   ]\n
+    ** Examples -** \`${command.example ? `${command.example}` : "No Examples Found"}\`\n
+    ** Aliases -** [ \`${command.aliases ? command.aliases.join(" , ") : "None."}\` ]`)
     embed.setFooter(message.guild.name, message.guild.iconURL())
 
     return message.channel.send(embed)
-}
+};
+} catch (e) {
+  console.log(e);
+};
 
     
 
