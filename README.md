@@ -1,7 +1,7 @@
-# Moderation Bot"
+# Discord.js Moderation Bot
 
 ### For Visual Studio Code Users -  
-#### Requirements & Steps
+#### Requirements & Steps :-
 * This Project
 * Node.js, Discord.js Installed
 * Discord Bot Token, Prefix
@@ -12,7 +12,9 @@
 ### For replit users -
 #### Requirements & Steps
 * Discord Bot Token, Prefix
-* Edit the `config.js and owner.json` file
+* Edit the `config.js, owner.json, config.json and emojis.json` file.
+* Go to **commands** section in repl and Then to **🔒secrets**.
+* Edit the **TOKEN** and paste the token in Value.
 * Run `npm i` once in Terminal to install Dependencies
 * Run `node index.js` to ***RUN*** the bot.
 
