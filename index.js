@@ -195,7 +195,7 @@ bot.on("message", async message => {
       if(message.attachments.size > 0)
         return message.channel.send("Hey buddy! I cannot read files :(\nPlease try to keep it in chat..")
      
-      fetch(`http://api.brainshop.ai/get?bid=155644&key=JGJ07CGGjTs2TwNn&uid=1&msg=${encodeURIComponent(message)}`)
+      fetch(`http://api.brainshop.ai/get?bid=${bot.config.bid}&key=${bot.config.key}&uid=1&msg=${encodeURIComponent(message)}`)
      .then(res => res.json())
      .then(data => {
      message.channel.send(new MessageEmbed()
