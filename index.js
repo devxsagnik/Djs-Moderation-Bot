@@ -258,7 +258,7 @@ let roles = bot.setups.get(member.guild.id, "welcome.roles");
         .replace(/{server_id}/g, `${member.guild.id}`)
         .replace(/{membercount}/g, `${member.guild.memberCount}`)
         .replace(/{guild}/g, `${member.guild.name}`)
-        .replace(/{Username_createdAgo}/g, `${moment(member.user.createdTimestamp).fromNow()}`)
+        .replace(/{user_createdAgo}/g, `${moment(member.user.createdTimestamp).fromNow()}`)
         .replace(/{user_createdAt}/g, `${moment(member.user.createdAt).format('MMMM Do YYYY, h:mm:ss a')}`);
         
   let sWelcomed = new canvas.Welcome();
@@ -304,7 +304,7 @@ let roles = bot.setups.get(member.guild.id, "welcome.roles");
         .replace(/{server_id}/g, `${member.guild.id}`)
         .replace(/{membercount}/g, `${member.guild.memberCount}`)
         .replace(/{guild}/g, `${member.guild.name}`)
-        .replace(/{Username_createdAgo}/g, `${moment(member.user.createdTimestamp).fromNow()}`)
+        .replace(/{user_createdAgo}/g, `${moment(member.user.createdTimestamp).fromNow()}`)
         .replace(/{user_createdAt}/g, `${moment(member.user.createdAt).format('MMMM Do YYYY, h:mm:ss a')}`)
         
   let Welcomed = new canvas.Welcome();
@@ -356,7 +356,7 @@ let roles = bot.setups.get(member.guild.id, "welcome.roles");
         .replace(/{server_id}/g, `${member.guild.id}`)
         .replace(/{membercount}/g, `${member.guild.memberCount}`)
         .replace(/{guild}/g, `${member.guild.name}`)
-        .replace(/{Username_createdAgo}/g, `${moment(member.user.createdTimestamp).fromNow()}`)
+        .replace(/{user_createdAgo}/g, `${moment(member.user.createdTimestamp).fromNow()}`)
         .replace(/{user_createdAt}/g, `${moment(member.user.createdAt).format('MMMM Do YYYY, h:mm:ss a')}`);
         
   let sLeaved = new canvas.Goodbye();
@@ -401,7 +401,7 @@ let roles = bot.setups.get(member.guild.id, "welcome.roles");
         .replace(/{server_id}/g, `${member.guild.id}`)
         .replace(/{membercount}/g, `${member.guild.memberCount}`)
         .replace(/{guild}/g, `${member.guild.name}`)
-        .replace(/{Username_createdAgo}/g, `${moment(member.user.createdTimestamp).fromNow()}`)
+        .replace(/{user_createdAgo}/g, `${moment(member.user.createdTimestamp).fromNow()}`)
         .replace(/{user_createdAt}/g, `${moment(member.user.createdAt).format('MMMM Do YYYY, h:mm:ss a')}`);
         
   let Leaved = new canvas.Goodbye();
