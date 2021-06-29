@@ -18,7 +18,7 @@ module.exports = {
 		const regex = args.splice(1).join(" ");
 
 		if (!message.member.hasPermission("BAN_MEMBERS")) {
-			return message.channel.send("I dont have exact perms to ban someone");
+			return message.channel.send("You dont have exact perms to ban someone");
 		}
 		if(!message.guild.me.hasPermission("BAN_MEMBERS")) {
 			return message.channel.send("I dont have permissions to ban someone");
