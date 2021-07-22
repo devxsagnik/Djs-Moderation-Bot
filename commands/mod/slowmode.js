@@ -9,10 +9,10 @@ module.exports = {
     },
   run: async (bot, message, args) => {
   
-    if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.channel.send('You do not have **MANAGE_CHANNELS** permission!').then(m => m.delete({ timeout: 5000 }));
-
-        if (!args[0]) return message.channel.send('You did not specify a time!').then(m => m.delete({ timeout: 5000}));
-
+    if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.channel.send('You do not have **MANAGE_CHANNELS** permission!')
+ 
+        if (!args[0]) return message.channel.send('You did not specify a time!')
+ 
         const currentCooldown = message.channel.rateLimitPerUser;
 
         const reason = args[1] ? args.slice(1).join(' ') : 'no reason';
@@ -22,8 +22,8 @@ module.exports = {
 
         if (args[0] === 'off') {
 
-            if (currentCooldown === 0) return message.channel.send('Channel cooldown is already off').then(m => m.delete({ timeout: 5000 }));
-
+            if (currentCooldown === 0) return message.channel.send('Channel cooldown is already off')
+ 
             embed.setTitle('Slowmode Disabled')
                 .setColor('#00ff00')
             return message.channel.setRateLimitPerUser(0, reason)
@@ -32,10 +32,10 @@ module.exports = {
 
         const time = ms(args[0]) / 1000;
 
-        if (isNaN(time)) return message.channel.send('not a valid time, please try again!').then(m => m.delete({ timeout: 5000 }));
-
-        if (time >= 21600) return message.channel.send('That slowmode limit is too high, please enter anything lower than 6 hours.').then(m => m.delete({ timeout: 5000 }));
-
+        if (isNaN(time)) return message.channel.send('not a valid time, please try again!')
+ 
+        if (time >= 21600) return message.channel.send('That slowmode limit is too high, please enter anything lower than 6 hours.')
+ 
         if (currentCooldown === time) return message.channel.send(`Slowmode is already set to ${args[0]}`);
 
         embed.setTitle('Slowmode Enabled')
