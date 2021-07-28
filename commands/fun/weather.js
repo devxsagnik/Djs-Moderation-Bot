@@ -12,7 +12,7 @@ module.exports = {
         category: 'fun',
     },
     run: async (bot, message, args) => {
-    
+
         if(args.length === 0){
             let errorembed = new MessageEmbed()
             .setTitle("Error :cry:")
@@ -21,9 +21,9 @@ module.exports = {
             .setTimestamp();
                 return message.channel.send(errorembed);
         }
-        
+
         weather.find({ search: args.join(" "), degreeType: 'C'}, function(err, result) {
-          
+
         if(result.length === 0){
             let errorembed = new MessageEmbed()
             .setTitle("Error :cry:")
@@ -32,7 +32,7 @@ module.exports = {
             .setTimestamp();
                 return message.channel.send(errorembed);
         }
-        
+
           var current = result[0].current;
           var location = result[0].location;
             if (err) {
@@ -43,8 +43,8 @@ module.exports = {
             .setTimestamp();
                 return message.channel.send(errorembed);
             }
-        
-            
+
+
             let embed = new MessageEmbed()
             .setDescription(`**${current.skytext}**`)
             .setAuthor(`Weather for ${current.observationpoint}`)

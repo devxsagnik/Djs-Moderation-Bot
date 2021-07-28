@@ -8,7 +8,7 @@ module.exports = {
   description: "Delete the custom commannd",
   category: "admin",
   },
-  
+
   run: async (bot, message, args) => {
 
     let cmdname = args[0];
@@ -35,7 +35,7 @@ module.exports = {
 
     } else {
       return message.channel.send(":x: Sorry but i am unable to find that command!")
-    
+
 
 
   }

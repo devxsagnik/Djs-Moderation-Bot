@@ -10,7 +10,7 @@ config: {
     aliases: [''],
 },
     run: async(bot, message, args) => {
-    
+
         let change = args[0];
     if (!change) return message.channel.send("Please provide the text");
 

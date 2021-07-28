@@ -30,7 +30,7 @@ module.exports = {
         if(guild){
             let tChannel = guild.channels.cache.find(ch => ch.type == "text" && ch.permissionsFor(ch.guild.me).has("CREATE_INSTANT_INVITE"));
             if(!tChannel) {
-                return message.channel.send("An Error Has Occured Try Again!"); 
+                return message.channel.send("An Error Has Occured Try Again!");
             }
             let invite = await tChannel.createInvite({ temporary: false, maxAge: 0 }).catch(err => {
                 return message.channel.send(`${err} has occured!`);

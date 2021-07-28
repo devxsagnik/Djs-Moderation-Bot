@@ -14,7 +14,7 @@ module.exports = {
         if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("**You Dont Have The Permissions To Unban Someone! - [BAN_MEMBERS]**")
 
         if (!args[0]) return message.channel.send("**Please Enter A Name!**")
-      
+
         let bannedMemberInfo = await message.guild.fetchBans()
 
         let bannedMember;
@@ -39,7 +39,7 @@ module.exports = {
                 message.channel.send(sembed2)
             }
         } catch {
-            
+
         }
 
         let channel = db.fetch(`modlog_${message.guild.id}`)

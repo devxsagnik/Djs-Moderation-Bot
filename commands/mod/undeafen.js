@@ -2,13 +2,13 @@ const { ownerID } = require("../../owner.json")
 
 module.exports = {
     config: {
-    
+
         name: "undeafen",
         category: 'mod',
         description: "Undeafen a member in a voice channel",
         usage: "Undeafen <user>",
         aliases: ["undeaf"]
-       
+
     },
 
     run: async(bot, message, args) => {
@@ -25,8 +25,8 @@ module.exports = {
         try {
             member.voice.setDeaf(false, reason);
             message.channel.send("Success ✅ : Member Undeafened")
-        } 
-        
+        }
+
         catch (error) {
             console.log(error)
             message.channel.send("Oops! An unknow error occured. Please try again later.")

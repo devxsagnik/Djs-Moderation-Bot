@@ -13,7 +13,7 @@ module.exports = {
     run: async (bot, message, args) => {
         const comment = args.join('');
         if(!comment) return message.channel.send(`${bot.emotes.error} Provide something to Comment!`)
-        try {    
+        try {
         let yt = await canvacord.Canvas.youtube({"avatar":message.author.displayAvatarURL({format: "png"}),"username":message.author.username, "content":args.join(" ")})
         let attachment = new Discord.MessageAttachment(yt, 'comment.png')
         message.channel.send(attachment);

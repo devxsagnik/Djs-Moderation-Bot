@@ -100,7 +100,7 @@ module.exports = {
 											);
 											await channelCollector.stop();
 											return;
-										  
+
 										} else {
 											bot.setups.set(
 												message.guild.id,

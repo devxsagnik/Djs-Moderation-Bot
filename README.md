@@ -1,6 +1,6 @@
 # Discord.js Moderation Bot
 
-### For Visual Studio Code Users -  
+### For Visual Studio Code Users -
 #### Requirements & Steps :-
 * This Project
 * Node.js, Discord.js Installed
@@ -31,7 +31,7 @@
 * Deafen | Undeafen
 * DisableModLogChannel | SetModLogChannel
 * DisableMuteRole | SetMuteRole
-* Dm 
+* Dm
 * Hackban/Forceban | Unban
 * Kick
 * Lock channel | Unlock

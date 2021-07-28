@@ -85,7 +85,7 @@ module.exports = {
             ops.games.delete(message.channel.id);
             throw err;
         }
-        
+
         function verifyWin(sides) {
             return (sides[0] === sides[1] && sides[0] === sides[2])
                 || (sides[0] === sides[3] && sides[0] === sides[6])

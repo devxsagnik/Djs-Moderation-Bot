@@ -17,7 +17,7 @@ module.exports = {
 				`You must have the \`MANAGE_GUILD\` permission in order to execute the command.`
 			);
 			db.set(`bypass.${message.guild.id}`, []);
-			
+
 		let option = args[0];
 		let options = ['punishment', 'age', 'logs', 'show', "disable"];
 		if (!option)
@@ -54,7 +54,7 @@ module.exports = {
 			if(!days) return message.channel.send("Please specify a valid day, it also must be a number. Ex- alt-config age 7");
 			if(isNaN(days)) return message.channel.send("Please specify a valid day, it also must be a number");
 		let day = Number(days)
-    
+
     if(day > 100) return message.channel.send("Please donot exceed the length of 100 days..");
 				db.set(`age.${message.guild.id}`, days);
 				return message.channel.send(
@@ -96,7 +96,7 @@ module.exports = {
 				break;
 				case 'disable':
 				  check = db.get(`logs.${message.guild.id}`) && db.get(`punishment.${message.guild.id}`) && db.get(`age.${message.guild.id}`)
-				   
+
 				if(!check) {
 				 return message.channel.send("Please set the required fields first or i cant disable it!!");
 				} else {
@@ -105,9 +105,9 @@ module.exports = {
 			 db.delete(`age.${message.guild.id}`);
 			return message.channel.send("Disabled the Anti-Alt logging in the server :)");
 				}
-				
+
 		}
-		
+
 		function parseMs(str) {
 		const parts = str.split(' ');
 		const msParts = parts.map(part => ms(part));

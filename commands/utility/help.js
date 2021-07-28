@@ -27,7 +27,7 @@ run: async (bot, message, args) => {
         } catch (e) {
             console.log(e)
     };
-    
+
     try {
 
     let Categories = ["admin", "fun", "images", "info", "mod", "utility"],
@@ -84,7 +84,7 @@ else {
   console.log(e);
 };
 
-    
+
 
 }
 

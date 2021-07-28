@@ -7,7 +7,7 @@ module.exports = {
     aliases: [""],
     description: "Toggles greeting embed on/off when member joins/leaves",
     usage: "greet-embed-toggle",
-  }, 
+  },
   run: async(bot, message, args) => {
     if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(new MessageEmbed()
     .setTitle("Error")
@@ -15,7 +15,7 @@ module.exports = {
     .setColor("#FF0000")
     .setTimestamp()
     );
-    
+
    let embed = new MessageEmbed()
    .setColor("RANDOM")
    .setTitle("What Setup do u want?")
@@ -25,7 +25,7 @@ module.exports = {
      dynamic: true
    }))
    .setThumbnail(bot.user.displayAvatarURL());
-   
+
    message.reply(embed).then(msg => {
   msg.channel.awaitMessages(m=> m.author.id === message.author.id, { max: 1, time: 30000, errors: ['time'] }).then(collected=>{
     switch(collected.first().content.toString()){
@@ -42,11 +42,11 @@ module.exports = {
   }).catch(error=>{
     console.log(error);
     return message.reply("Sorry but your time ran out ⌛!");
-   
+
   });
    });
    function welcomesystem(){
- 
+
   let wembed = new MessageEmbed()
     .setColor("RANDOM")
     .setTitle("What do u want to do?")
@@ -55,7 +55,7 @@ module.exports = {
 **2.** \`Welcome Embed Toggle Off\` - *Turns the welcome embed system off*
 `)
     .setFooter("Pick the INDEX NUMBER");
-    
+
       message.reply(wembed).then(msg => {
       msg.channel.awaitMessages(m=>m.author.id === message.author.id, {max: 1, time: 60000, errors: ["TIME"]}).then(collected=>{
         switch(collected.first().content){
@@ -99,7 +99,7 @@ module.exports = {
 }
 
 function leavesystem(){
- 
+
   let wembed = new MessageEmbed()
     .setColor("RANDOM")
     .setTitle("What do u want to do?")
@@ -108,7 +108,7 @@ function leavesystem(){
 **2.** \`Leave Embed Toggle Off\` - *Turns the Leave embed system off*
 `)
     .setFooter("Pick the INDEX NUMBER");
-    
+
       message.reply(wembed).then(msg => {
       msg.channel.awaitMessages(m=>m.author.id === message.author.id, {max: 1, time: 60000, errors: ["TIME"]}).then(collected=>{
         switch(collected.first().content){

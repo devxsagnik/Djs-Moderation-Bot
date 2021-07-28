@@ -12,7 +12,7 @@ module.exports = {
         category: 'fun',
     },
     run: async (bot, message, args) => {
-    
+
         const text = args.slice().join(' ');
 		if (!text) {
 			return message.channel.send(
@@ -31,6 +31,6 @@ module.exports = {
 		}
 		const attachment = new MessageAttachment(response.message, 'clyde.png');
 		return message.channel.send(attachment);
-  
+
     }
 };

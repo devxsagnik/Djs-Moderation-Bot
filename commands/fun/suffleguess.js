@@ -12,7 +12,7 @@ module.exports = {
   category: "fun",
   },
   run: async (bot, message, args) => {
- 
+
     const res = await (await (fetch(`https://api.monkedev.com/fun/shuffle?content=${word}&key=EjLY54Vys5kJVWgcfaA1RjFIp`))).json();
     const firstbd = new MessageEmbed()
       .setTitle("Shuffled!")

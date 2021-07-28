@@ -53,7 +53,7 @@ module.exports = {
 									})
 									.then(collected => {
 									const fetched = bot.setups.get(message.guild.id, "welcome.roles");
-									
+
 									if(fetched === null) {
 									  bot.setups.set(message.guild.id, {
 									    roles: []

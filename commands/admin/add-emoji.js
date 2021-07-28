@@ -11,14 +11,14 @@ module.exports = {
   category: "admin",
   },
   run: async (bot, message, args) => {
-    
+
     if (!message.member.hasPermission(`MANAGE_EMOJIS`)) {
       return message.channel.send(`You Don't Have Permission To Use This Command! Manage Emojis`)
     }
-    
+
     if (!message.guild.me.hasPermission("MANAGE_EMOJIS")) { return message.channel.send(`I dont have perms to upload emoji`)
     }
-    
+
     const emoji = args[0];
     if (!emoji) return message.channel.send(`Please Give Me A Emoji!`);
 

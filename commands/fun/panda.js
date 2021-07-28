@@ -10,9 +10,9 @@ module.exports = {
   aliases: [""],
   usage: "panda",
   },
-  
+
   run: async (bot, message, args) => {
-  
+
     const res = await fetch('https://some-random-api.ml/img/panda');
     const img = (await res.json()).link;
 
@@ -23,6 +23,6 @@ module.exports = {
     .setTimestamp()
     .setColor(message.guild.me.displayHexColor);
     message.channel.send(embed);
-    
+
   }
 };

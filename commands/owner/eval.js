@@ -4,19 +4,19 @@ const beautify = require('beautify');
 
 module.exports = {
   config: {
-    name: "eval", 
+    name: "eval",
     aliases: ["e", "evaluate"],
     category: "owner",
     description: "Evaluates the code you put in but it's only available for the my Developer and no one else!!!!!",
     example: `${config.PREFIX} eval [js string]`,
   },
 
-    run: async (bot, message, args) => { 
+    run: async (bot, message, args) => {
 
         if (message.author.id !== config.OWNER_ID) {
             return;
         }
-        
+
         if (!args[0]) {
             return;
         }
@@ -25,9 +25,9 @@ module.exports = {
             if (args.join(" ").toLowerCase().includes("token")) {
                 return message.reply("Are you crazy ;-; You are going to give out your token public.I stopped it hopefully...")
             }
-        
+
             const toEval = args.join(" ");
-            const evaluated = eval(toEval); 
+            const evaluated = eval(toEval);
 
             let embed = new Discord.MessageEmbed()
             .setColor("#00FF00")

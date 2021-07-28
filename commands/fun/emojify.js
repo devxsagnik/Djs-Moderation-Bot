@@ -11,7 +11,7 @@ module.exports = {
         category: 'fun',
     },
     run: async (bot, message, args) => {
-    
+
         if(!args[0]) {
 			return message.channel.send(
 				'❎ Please provide valid text.',

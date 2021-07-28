@@ -24,13 +24,13 @@ module.exports = {
         })
         );
         } else {
-       
+
         if(!args[0]) return message.channel.send("Please provide a command name!")
 
         let commandName = args[0].toLowerCase()
 
         try {
-          
+
           delete require.cache[require.resolve(`./${commandName}.js`)]
           const pull = require(`./${commandName}.js`)
           bot.commands.set(pull.config.name, pull)
@@ -44,4 +44,4 @@ module.exports = {
 
 }
       }
-} 
+}

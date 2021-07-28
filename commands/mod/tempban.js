@@ -40,7 +40,7 @@ module.exports = {
 			return message.channel.send("I think you cant have that role to ban Owner");
 		}
 		if(!reason) reason = "No Reason Provided";
-		
+
 		const tbuembed = new MessageEmbed()
 			.setTitle("You have been banned!")
 			.setColor("#854ae3")
@@ -58,7 +58,7 @@ module.exports = {
 			.addField("Moderator:", message.author.username);
 		message.channel.send(tbembed);
 		tbuser.send(tbuembed);
-		
+
 		tbuser.ban({reason: reason }).then(() => {
 		  setTimeout( function (){
 			message.guild.members.unban(tbuser.id);

@@ -16,14 +16,14 @@ module.exports = {
     .setDescription(":x: You are not authorized to use this command :(")
     .setColor("#FF0000")
     .setTimestamp();
-    
+
     if(!message.member.hasPermission("ADMINISTRATOR")) {
       return message.channel.send(hembed);
     } else {
       try {
         let prefix = await db.fetch(`prefix_${message.guild.id}`)
         if(!prefix) prefix = PREFIX;
-        
+
         const embed = new MessageEmbed()
         .setTitle("Greetings Setup")
         .setAuthor(message.author.username, message.author.displayAvatarURL())

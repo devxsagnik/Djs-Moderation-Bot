@@ -12,7 +12,7 @@ module.exports = {
         category: 'fun',
     },
     run: async (bot, message, args) => {
-    
+
         const name = args.join(' ');
 		if (!name) {
 			return message.channel.send(

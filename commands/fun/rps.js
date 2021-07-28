@@ -15,7 +15,7 @@ module.exports = {
     run: async (bot, message, args) => {
         let userChoice;
     if (args.length) userChoice = args[0].toLowerCase();
-    if (!rps.includes(userChoice)) 
+    if (!rps.includes(userChoice))
       return message.channel.send('Please enter rock, paper, or scissors');
     userChoice = rps.indexOf(userChoice);
 

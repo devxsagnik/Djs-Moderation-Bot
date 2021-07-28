@@ -12,7 +12,7 @@ module.exports = {
         category: 'fun',
     },
     run: async (bot, message, args) => {
-        
+
         const url = `http://some-random-api.ml/binary?text=${args}`;
 
   let response, data;

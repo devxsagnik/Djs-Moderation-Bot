@@ -16,7 +16,7 @@ module.exports = {
   usage: "screenshot <URL>",
   },
   run: async (bot, message, args) => {
-   
+
     message.delete();
     const user = message.author.tag
     const urls = args[0];
@@ -24,18 +24,18 @@ module.exports = {
       return message.channel
         .send(`\`\`\`\n${user},where is the link -_-\n\`\`\``)
         .then(m => m.delete({ timeout: 5000 }).catch(e => {}));
-    
+
  if (urls.length < 8)
       return message
         .reply(
           "https is too short to reach - 8 limit"
         )
         .then(m => m.delete({ timeout: 9000 }).catch(e => {}));
-    
+
     message.channel.send("Please Wait....").then(m => m.delete({
       timeout: 3000
     }).catch(e => console.log(e)));
-    
+
     const site = /^(https?:\/\/)/i.test(urls) ? urls : `http://${urls}`;
     try {
       const { body } = await fetch(

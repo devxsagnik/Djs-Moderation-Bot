@@ -67,7 +67,7 @@ module.exports = {
                 mutee.send(`**Hello, You Have Been Muted In ${message.guild.name} for - ${reason || "No Reason"}`).catch(() => null)
             })
             } catch {
-                 mutee.roles.set([muterole.id])                               
+                 mutee.roles.set([muterole.id])
             }
                 if (reason) {
                 const sembed = new MessageEmbed()
@@ -81,7 +81,7 @@ module.exports = {
                     .setDescription(`${mutee.user.username} was successfully muted`)
                 message.channel.send(sembed2);
                 }
-            
+
             let channel = db.fetch(`modlog_${message.guild.id}`)
             if (!channel) return;
 

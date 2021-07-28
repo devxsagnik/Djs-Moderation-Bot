@@ -1,6 +1,6 @@
 const { MessageEmbed } = require('discord.js');
 
-module.exports = { 
+module.exports = {
         config: {
             name: "rolememberinfo",
             category: 'info',
@@ -10,7 +10,7 @@ module.exports = {
         },
         run: async (bot, message, args) => {
         if (args.includes("@everyone")) return;
-        
+
         if (args.includes("@here")) return;
 
         if (!args[0]) return message.channel.send("**Please Enter A Role!**")

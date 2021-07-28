@@ -7,17 +7,17 @@ module.exports = {
           usage: "+svr <region ID>",
           category: 'admin',
           example: "+svr jp",
-          aliases: ['svr'],  
-        
+          aliases: ['svr'],
+
 },
   run: async (bot, message, args) => {
-  
+
     if (!message.member.hasPermission("MANAGE_GUILD") && !ownerID.includes(message.author.id)) return message.channel.send("You Don't Have Sufficient Permissions!- [MANAGE_GUILD]");
 
     let serverRegion = args.slice(0).join(' ');
-    
+
     var availableRegions = ['bz', 'hk', 'jp', 'rus', 'sng', 'sa', 'syd', 'ind', 'usc', 'use', 'usw', 'uss', 'eur'];
-    
+
     if(!serverRegion) {
       message.channel.send(`Please provide a server ID\n**Available IDS - **\n${availableRegions}`)
     }
@@ -41,7 +41,7 @@ module.exports = {
          }
         await message.guild.setRegion(serverAliases[serverRegion])
         message.channel.send(`Done ✅ | Server Region changed to ${serverAliases[serverRegion]}`)
-        
+
       }
 
       catch(error) {

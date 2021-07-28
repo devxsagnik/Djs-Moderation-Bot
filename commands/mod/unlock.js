@@ -12,7 +12,7 @@ module.exports = {
         let lockPermErr = new Discord.MessageEmbed()
         .setTitle("**User Permission Error!**")
         .setDescription("**Sorry, you don't have permissions to use this! ❌**")
-        
+
         if(!message.channel.permissionsFor(message.member).has("MANAGE_CHANNELS") ) return message.channel.send(lockPermErr);
 
         let channel = message.channel;

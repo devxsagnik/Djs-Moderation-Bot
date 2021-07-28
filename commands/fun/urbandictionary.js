@@ -30,7 +30,7 @@ module.exports = {
                     .setTimestamp()
 
                 message.channel.send(embed)
-            
+
         } catch (e) {
             console.log(e)
             return message.channel.send("looks like i've broken! Try again")

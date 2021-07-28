@@ -11,9 +11,9 @@ module.exports = {
         let lockPermErr = new Discord.MessageEmbed()
         .setTitle("**User Permission Error!**")
         .setDescription("**Sorry, you don't have permissions to use this! ❌**")
-        
+
         if(!message.channel.permissionsFor(message.member).has("MANAGE_CHANNELS") ) return message.channel.send(lockPermErr);
-        
+
         if(!args[0]) {
         return message.channel.send("Please specify something.`Either on/off`")
         };
@@ -25,9 +25,9 @@ module.exports = {
                     SEND_MESSAGES: false
                 })
             })
-            
+
             let lockEmbed = new Discord.MessageEmbed()
-                
+
                 .setThumbnail(`https://media.giphy.com/media/JozO6wdFcC81VPO6RS/giphy.gif`)
                 .setDescription(`**\n\nDone! Server Fully Locked! 🔒**`)
                 .setColor('#2F3136')
@@ -39,9 +39,9 @@ module.exports = {
                     SEND_MESSAGES: true
                 })
             })
-            
+
             let lockEmbed2 = new Discord.MessageEmbed()
-                .setColor('#2F3136')    
+                .setColor('#2F3136')
                 .setThumbnail(`https://media.giphy.com/media/JozO6wdFcC81VPO6RS/giphy.gif`)
                 .setDescription(`**\n\nDone! Server Fully Unlocked! 🔓**`)
             return message.channel.send(lockEmbed2)

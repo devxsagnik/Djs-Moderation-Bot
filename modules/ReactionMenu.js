@@ -10,15 +10,15 @@ module.exports = class ReactionMenu {
    * @param {GuildMember} member
    * @param {MessageEmbed} embed
    * @param {Array} arr
-   * @param {int} interval 
+   * @param {int} interval
    * @param {Object} reactions
-   * @param {int} timeout 
+   * @param {int} timeout
    */
   constructor(bot, channel, member, embed, arr = null, interval = 10, reactions = {
-    '⏪': this.first.bind(this), 
+    '⏪': this.first.bind(this),
     '◀️': this.previous.bind(this),
     '🗑️': this.stop.bind(this),
-    '▶️': this.next.bind(this), 
+    '▶️': this.next.bind(this),
     '⏩': this.last.bind(this)
 
   }, timeout = 180000) {
@@ -127,20 +127,20 @@ module.exports = class ReactionMenu {
    * Creates a reaction collector
    */
   createCollector() {
-    
+
     // Create collector
     const collector = this.message.createReactionCollector((reaction, user) => {
       return (this.emojis.includes(reaction.emoji.name) || this.emojis.includes(reaction.emoji.id)) &&
         user.id == this.memberId;
     }, { time: this.timeout });
-    
+
     // On collect
     collector.on('collect', async reaction => {
       let newPage =  this.reactions[reaction.emoji.name] || this.reactions[reaction.emoji.id];
       if (typeof newPage === 'function') newPage = newPage();
       if (newPage) await this.message.edit(newPage);
       await reaction.users.remove(this.memberId);
-    }); 
+    });
 
     // On end
     collector.on('end', () => {
@@ -148,7 +148,7 @@ module.exports = class ReactionMenu {
        setTimeout(() => {
        this.message.delete().catch(() => {});
     }, 2000);
-      
+
     });
 
     this.collector = collector;

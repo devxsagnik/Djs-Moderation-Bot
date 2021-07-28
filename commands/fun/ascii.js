@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const figlet = require("figlet");
- 
+
 module.exports = {
     config: {
   name: "ascii",
@@ -10,7 +10,7 @@ module.exports = {
    usage: "ascii <name>",
     },
 run: async (bot, message, args) => {
-    
+
     if(!args[0]) return message.channel.send('Please provide some text');
 
         msg = args.join(" ");

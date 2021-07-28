@@ -9,7 +9,7 @@ module.exports = {
   usage: "servericon",
   },
   run: async (bot, message, args) => {
-    
+
     let embed = new Discord.MessageEmbed()
     .setAuthor(`Avatar for ${message.guild.name}`, message.guild.iconURL({
       dynamic: true
@@ -17,8 +17,8 @@ module.exports = {
     .setDescription(`**Download This Server's Avatar**\n[Click Here](${message.guild.iconURL({ dynamic: true, size: 1024 })})`)
     .setImage(message.guild.iconURL({ dynamic: true, size: 1024 }))
     .setColor("RANDOM");
-    
+
       message.channel.send(embed)
-    
+
   }
 }

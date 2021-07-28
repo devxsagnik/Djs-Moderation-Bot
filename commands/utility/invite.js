@@ -12,9 +12,9 @@ module.exports = {
   usage: "invite",
   },
   run: async (bot, message, args) => {
-    
+
     const Invite = `https://discordapp.com/oauth2/authorize?client_id=${bot.user.id}&permissions=8&scope=bot`, Owne = `${Owner_Name}`, Dev = `Felix_PlaYz#0001`;
-    
+
     const Embed = new Discord.MessageEmbed()
     .setColor("RANDOM")
     .setTitle("Thanks for using the bot")
@@ -24,7 +24,7 @@ module.exports = {
     .addField("Dev", Dev, true)
     .setFooter(`Requested by ${message.author.username}`)
     .setTimestamp();
-    
+
     return message.channel.send(Embed).catch(() => message.channel.send("Invite Link - " + Invite));
   }
 };

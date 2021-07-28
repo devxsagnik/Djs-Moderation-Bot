@@ -22,7 +22,7 @@ module.exports = {
 				);
 
 			if (!args[0]) return message.channel.send('**Enter A User To Kick!**');
-			
+
 			let reason = args.slice(1).join(" ");
 
 			var kickMember =

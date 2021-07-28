@@ -10,7 +10,7 @@ config: {
     aliases: [''],
 },
     run: async(bot, message, args) => {
-        
+
         const Data = await Random.GetAdvice();
         return message.channel.send(Data);
     }

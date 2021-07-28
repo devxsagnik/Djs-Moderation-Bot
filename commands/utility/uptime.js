@@ -20,7 +20,7 @@ module.exports = {
             .setDescription(`I am Online from **${days}** days, **${hours}** hours, **${minutes}** minutes, **${seconds}** seconds`)
             .setThumbnail(bot.user.displayAvatarURL())
             .setFooter(message.guild.name, message.guild.iconURL())
-            .setAuthor(bot.user.username, bot.user.displayAvatarURL())  
+            .setAuthor(bot.user.username, bot.user.displayAvatarURL())
         message.channel.send(embed);
     }
 }
