@@ -19,7 +19,7 @@
     "discord-image-generation": "^1.4.9",
     "discord.js": "^12.5.3",
     "dotenv": "^10.0.0",
-    "enmap": "^5.8.5",
+    "enmap": "^5.8.7",
     "express": "^4.17.1",
     "ffmpeg": "^0.0.4",
     "ffmpeg-static": "^4.3.0",
