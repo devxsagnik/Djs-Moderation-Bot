@@ -23,7 +23,7 @@
     "express": "^4.17.1",
     "ffmpeg": "^0.0.4",
     "ffmpeg-static": "^4.3.0",
-    "figlet": "^1.5.0",
+    "figlet": "^1.5.2",
     "fs": "^0.0.1-security",
     "got": "^11.8.2",
     "humanize-duration": "^3.26.0",
