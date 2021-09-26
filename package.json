@@ -52,7 +52,7 @@
     "url": "^0.11.0",
     "weather-js": "^2.0.0",
     "weather.js": "^0.1.0",
-    "wikijs": "^6.2.1"
+    "wikijs": "^6.3.2"
   },
   "devDependencies": {},
   "scripts": {
