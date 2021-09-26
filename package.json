@@ -24,7 +24,7 @@
     "ffmpeg": "^0.0.4",
     "ffmpeg-static": "^4.4.0",
     "figlet": "^1.5.2",
-    "fs": "^0.0.1-security",
+    "fs": "^0.0.2",
     "got": "^11.8.2",
     "humanize-duration": "^3.27.0",
     "logger": "0.0.1",
