@@ -26,7 +26,7 @@
     "figlet": "^1.5.2",
     "fs": "^0.0.1-security",
     "got": "^11.8.2",
-    "humanize-duration": "^3.26.0",
+    "humanize-duration": "^3.27.0",
     "logger": "0.0.1",
     "mathjs": "^9.4.1",
     "moment": "^2.29.1",
