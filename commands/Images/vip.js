@@ -7,6 +7,10 @@ module.exports = {
   description: "Make yourself vip",
   aliases: [" "],
   usage: "vip",
+  cooldown: 1, 
+  memberpermissions: [],
+  requiredroles: [],
+  alloweduserids: [],
 
   run: async (client, message, args) => {
     let avatar = message.author.displayAvatarURL({

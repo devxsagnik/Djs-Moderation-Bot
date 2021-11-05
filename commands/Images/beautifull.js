@@ -7,10 +7,10 @@ module.exports = {
   description: 'This is Beautiful!',
   aliases: ["beautiful"],
   usage: '',
-  cooldown: 1, //the command cooldown for execution & for helpcmd [OPTIONAL]
-  memberpermissions: [], //Only allow members with specific Permissions to execute a Commmand [OPTIONAL]
-  requiredroles: [], //Only allow specific Users with a Role to execute a Command [OPTIONAL]
-  alloweduserids: [], //Only allow specific Users to execute a Command [OPTIONAL]
+  cooldown: 1,
+  memberpermissions: [],
+  requiredroles: [],
+  alloweduserids: [],
 
   run: async (client, message, args) => {
 

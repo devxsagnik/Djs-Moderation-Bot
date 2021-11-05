@@ -7,10 +7,10 @@ module.exports = {
     description: "Slap mentioned user",
     aliases: [" "],
     usage: "slap <@user>",
-    cooldown: 1, //the command cooldown for execution & for helpcmd [OPTIONAL]
-    memberpermissions: [], //Only allow members with specific Permissions to execute a Commmand [OPTIONAL]
-    requiredroles: [], //Only allow specific Users with a Role to execute a Command [OPTIONAL]
-    alloweduserids: [], //Only allow specific Users to execute a Command [OPTIONAL]
+    cooldown: 1,
+    memberpermissions: [],
+    requiredroles: [],
+    alloweduserids: [],
 
     run: async (client, message, args) => {
 
@@ -18,7 +18,9 @@ module.exports = {
 
         let target2 = message.mentions.users.first();
 
-        if (!target2) return message.channel.send({ content: "Please Mention Someone!"});
+        if (!target2) return message.channel.send({
+            content: "Please Mention Someone!"
+        });
 
         let avatar = target1.displayAvatarURL({
             dynamic: false,
