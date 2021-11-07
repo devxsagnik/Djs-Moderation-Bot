@@ -1,3 +1,7 @@
+
 tasks:
   - init: npm install
     command: npm run start
+vscode:
+  extensions:
+    - hookyqr.beautify
