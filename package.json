@@ -29,7 +29,7 @@
     "humanize-duration": "^3.26.0",
     "logger": "0.0.1",
     "mathjs": "^9.4.1",
-    "moment": "^2.27.0",
+    "moment": "^2.29.4",
     "moment-duration-format": "^2.3.2",
     "mongoose": "^5.12.8",
     "ms": "^2.1.2",
