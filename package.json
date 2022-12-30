@@ -42,7 +42,7 @@
     "path": "^0.12.7",
     "pretty-ms": "^7.0.1",
     "quick.db": "^7.1.3",
-    "random-words": "^1.1.1",
+    "random-words": "^1.2.0",
     "relevant-urban": "^2.0.0",
     "request-promise-native": "^1.0.9",
     "sharp": "^0.28.0",
